@@ -11,8 +11,8 @@ function addContact() {
 
     // Verifica se ambos os campos estão preenchidos
     if (name && phone) {
-        // Verifica se o nome já foi adicionado (case-sensitive)
-        if (!contactNames.includes(name)) {
+        // Verifica se o nome já foi adicionado (insensível a maiúsculas/minúsculas)
+        if (!contactNames.some(existingName => existingName.toLowerCase() === name.toLowerCase())) {
             // Adiciona o nome ao array de nomes
             contactNames.push(name);
 
